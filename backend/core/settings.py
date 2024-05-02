@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'graphene_django',
+    'books',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -104,7 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+GRAPHENE = {
+    'SCHEMA': 'core.schema.schema'  # Path to the schema
+}
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
