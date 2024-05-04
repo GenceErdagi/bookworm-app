@@ -1,0 +1,802 @@
+[
+	{
+		"title": "To Kill a Mockingbird",
+		"author": "Harper Lee",
+		"publication_date": "1960-07-11",
+		"isbn": "9780060935467",
+		"genres": ["Classic", "Courtroom Drama"],
+		"description": "A novel about the wrongful conviction of a black man and its impact on his family and the community, set in the Deep South of the 1930s."
+	},
+	{
+		"title": "1984",
+		"author": "George Orwell",
+		"publication_date": "1949-06-08",
+		"isbn": "9780451524935",
+		"genres": ["Dystopian", "Political Fiction"],
+		"description": "A dystopian novel presenting an imagined future, 1984, where critical thought is suppressed under a totalitarian regime."
+	},
+	{
+		"title": "Pride and Prejudice",
+		"author": "Jane Austen",
+		"publication_date": "1813-01-28",
+		"isbn": "9780679783268",
+		"genres": ["Classic", "Romance"],
+		"description": "The story follows the emotional development of Elizabeth Bennet, who learns the error of making hasty judgments and comes to appreciate the difference between the superficial and the essential."
+	},
+	{
+		"title": "The Great Gatsby",
+		"author": "F. Scott Fitzgerald",
+		"publication_date": "1925-04-10",
+		"isbn": "9780743273565",
+		"genres": ["Classic", "Novel"],
+		"description": "A novel of mystery and tragedy, primarily concerning the young and mysterious millionaire Jay Gatsby and his quixotic passion and obsession for the beautiful Daisy Buchanan."
+	},
+	{
+		"title": "The Catcher in the Rye",
+		"author": "J.D. Salinger",
+		"publication_date": "1951-07-16",
+		"isbn": "9780316769488",
+		"genres": ["Classic", "Coming-of-Age"],
+		"description": "The novel's protagonist Holden Caulfield has become an icon for teenage rebellion."
+	},
+	{
+		"title": "Moby Dick",
+		"author": "Herman Melville",
+		"publication_date": "1851-10-18",
+		"isbn": "9780142437247",
+		"genres": ["Adventure", "Epic"],
+		"description": "An epic tale of the voyage of the whaling ship Pequod, commanded by Captain Ahab, who leads his crew on a quest for the white whale, Moby Dick."
+	},
+	{
+		"title": "War and Peace",
+		"author": "Leo Tolstoy",
+		"publication_date": "1869-01-01",
+		"isbn": "9781400079988",
+		"genres": ["Historical", "Epic"],
+		"description": "A broad panorama of Russian society against the backdrop of the Napoleonic Wars, combines historical and fictional characters in one of the greatest novels ever written."
+	},
+	{
+		"title": "The Lord of the Rings",
+		"author": "J.R.R. Tolkien",
+		"publication_date": "1954-07-29",
+		"isbn": "9780395489314",
+		"genres": ["Fantasy", "Adventure"],
+		"description": "An epic fantasy novel written by English author J.R.R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work."
+	},
+	{
+		"title": "The Alchemist",
+		"author": "Paulo Coelho",
+		"publication_date": "1988-01-01",
+		"isbn": "9780062315007",
+		"genres": ["Fantasy", "Drama"],
+		"description": "A philosophical story that focuses on Santiago's journey to obtain wisdom and finds more significantly along the way."
+	},
+	{
+		"title": "Crime and Punishment",
+		"author": "Fyodor Dostoevsky",
+		"publication_date": "1866-01-01",
+		"isbn": "9780143058144",
+		"genres": ["Philosophical", "Fiction"],
+		"description": "A novel by the Russian author Fyodor Dostoevsky. It is the story of a murder and its consequences, exploring the moral dilemmas faced by the protagonist, Rodion Raskolnikov."
+	},
+	{
+		"title": "One Hundred Years of Solitude",
+		"author": "Gabriel García Márquez",
+		"publication_date": "1967-06-05",
+		"isbn": "9780060883287",
+		"genres": ["Magical Realism", "Novel"],
+		"description": "The novel tells the multi-generational story of the Buendía family, whose patriarch, José Arcadio Buendía, founded the town of Macondo, a fictitious town in the country of Colombia."
+	},
+	{
+		"title": "Brave New World",
+		"author": "Aldous Huxley",
+		"publication_date": "1932-01-01",
+		"isbn": "9780060850524",
+		"genres": ["Dystopian", "Science Fiction"],
+		"description": "A dystopian novel by English author Aldous Huxley, set in a futuristic society that is ostensibly perfect, but fundamentally flawed."
+	},
+	{
+		"title": "Frankenstein",
+		"author": "Mary Shelley",
+		"publication_date": "1818-01-01",
+		"isbn": "9780143131847",
+		"genres": ["Gothic", "Science Fiction"],
+		"description": "A novel about young scientist Victor Frankenstein who creates a grotesque but sentient creature in an unorthodox scientific experiment."
+	},
+	{
+		"title": "Jane Eyre",
+		"author": "Charlotte Brontë",
+		"publication_date": "1847-10-16",
+		"isbn": "9780141441146",
+		"genres": ["Gothic", "Romance"],
+		"description": "An English literature classic, which tells the story of Jane Eyre's resilience as an orphaned child and later love for the brooding Mr. Rochester."
+	},
+	{
+		"title": "The Grapes of Wrath",
+		"author": "John Steinbeck",
+		"publication_date": "1939-04-14",
+		"isbn": "9780143039433",
+		"genres": ["Realist Novel", "Historical Fiction"],
+		"description": "The story follows the fortunes of a poor family as they travel from the Dust Bowl region to California, out of the desperation of the Great Depression."
+	},
+	{
+		"title": "Catch-22",
+		"author": "Joseph Heller",
+		"publication_date": "1961-11-10",
+		"isbn": "9781451626650",
+		"genres": ["Satire", "Historical Fiction"],
+		"description": "Set during World War II, the novel uses a distinctive non-chronological third-person omniscient narration, describing events from the points of view of different characters."
+	},
+	{
+		"title": "Lolita",
+		"author": "Vladimir Nabokov",
+		"publication_date": "1955-09-15",
+		"isbn": "9780679723165",
+		"genres": ["Novel", "Drama"],
+		"description": "A novel that is notorious for its controversial subject: the protagonist and unreliable narrator, a middle-aged literature professor under the pseudonym Humbert Humbert, is obsessed with a 12-year-old girl."
+	},
+	{
+		"title": "Don Quixote",
+		"author": "Miguel de Cervantes",
+		"publication_date": "1605-01-16",
+		"isbn": "9780060934347",
+		"genres": ["Classic", "Comedy"],
+		"description": "The story follows the adventures of a noble (hidalgo) from La Mancha named Alonso Quixano, who reads so many chivalric romances that he loses his sanity and decides to become a knight-errant."
+	},
+	{
+		"title": "Animal Farm",
+		"author": "George Orwell",
+		"publication_date": "1945-08-17",
+		"isbn": "9780451526342",
+		"genres": ["Political Satire", "Allegory"],
+		"description": "A farm is taken over by its overworked, mistreated animals. With flaming idealism and stirring slogans, they set out to create a paradise of progress, justice, and equality."
+	},
+	{
+		"title": "Wuthering Heights",
+		"author": "Emily Brontë",
+		"publication_date": "1847-12-01",
+		"isbn": "9780141439556",
+		"genres": ["Gothic", "Romance"],
+		"description": "A tale of love and revenge on the Yorkshire moors, this novel narrates the turbulent relationship between the mysterious Heathcliff and Catherine Earnshaw."
+	},
+	{
+		"title": "To Kill a Mockingbird",
+		"author": "Harper Lee",
+		"publication_date": "1960-07-11",
+		"isbn": "9780060935467",
+		"genres": ["Novel", "Legal Drama"],
+		"description": "Set in the Depression-era South, it follows the story of young Scout Finch and her father, Atticus Finch, as he defends a black man unjustly accused of rape."
+	},
+	{
+		"title": "The Great Gatsby",
+		"author": "F. Scott Fitzgerald",
+		"publication_date": "1925-04-10",
+		"isbn": "9780743273565",
+		"genres": ["Novel", "Historical Fiction"],
+		"description": "The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, set on Long Island during the Roaring Twenties."
+	},
+	{
+		"title": "1984",
+		"author": "George Orwell",
+		"publication_date": "1949-06-08",
+		"isbn": "9780451524935",
+		"genres": ["Dystopian", "Political Fiction"],
+		"description": "A depiction of a totalitarian regime in the future, exploring themes of surveillance, truth, and individuality."
+	},
+	{
+		"title": "Pride and Prejudice",
+		"author": "Jane Austen",
+		"publication_date": "1813-01-28",
+		"isbn": "9780679783268",
+		"genres": ["Romance", "Satire"],
+		"description": "The story of Elizabeth Bennet and her family in 19th-century England, dealing with issues of manners, upbringing, and marriage."
+	},
+	{
+		"title": "The Catcher in the Rye",
+		"author": "J.D. Salinger",
+		"publication_date": "1951-07-16",
+		"isbn": "9780316769488",
+		"genres": ["Novel", "Bildungsroman"],
+		"description": "Following the life of Holden Caulfield, a teenage boy struggling with adolescence in the post-war era."
+	},
+	{
+		"title": "Moby-Dick",
+		"author": "Herman Melville",
+		"publication_date": "1851-10-18",
+		"isbn": "9780142437247",
+		"genres": ["Adventure", "Epic"],
+		"description": "The voyage of the whaling ship Pequod, commanded by Captain Ahab, who is driven by his obsession with the great white whale, Moby-Dick."
+	},
+	{
+		"title": "Crime and Punishment",
+		"author": "Fyodor Dostoevsky",
+		"publication_date": "1866-01-01",
+		"isbn": "9780143058144",
+		"genres": ["Psychological Fiction", "Philosophical Novel"],
+		"description": "The story of Raskolnikov, a former student who believes he is above the law and murders a pawnbroker for her money."
+	},
+	{
+		"title": "The Brothers Karamazov",
+		"author": "Fyodor Dostoevsky",
+		"publication_date": "1880-11-01",
+		"isbn": "9780374528379",
+		"genres": ["Philosophical Novel", "Crime Fiction"],
+		"description": "A spiritual drama of moral struggles concerning faith, doubt, and reason, set against a modernizing Russia."
+	},
+	{
+		"title": "War and Peace",
+		"author": "Leo Tolstoy",
+		"publication_date": "1869-01-01",
+		"isbn": "9780307266934",
+		"genres": ["Historical Fiction", "Epic"],
+		"description": "A narrative that follows the French invasion of Russia through the eyes of five aristocratic families."
+	},
+	{
+		"title": "The Odyssey",
+		"author": "Homer",
+		"publication_date": "-700-01-01",
+		"isbn": "9780140268867",
+		"genres": ["Epic", "Poetry"],
+		"description": "An epic poem that narrates the return journey of Odysseus to the island of Ithaca following the fall of Troy."
+	},
+	{
+		"title": "Beloved",
+		"author": "Toni Morrison",
+		"publication_date": "1987-09-16",
+		"isbn": "9781400033416",
+		"genres": ["Historical Fiction", "Magical Realism"],
+		"description": "A haunting novel about a woman named Sethe, an escaped slave who must confront her past and the ghost of her infant daughter."
+	},
+	{
+		"title": "The Road",
+		"author": "Cormac McCarthy",
+		"publication_date": "2006-09-26",
+		"isbn": "9780307387899",
+		"genres": ["Post-Apocalyptic", "Drama"],
+		"description": "A father and his young son journey across a grim post-apocalyptic landscape, some years after a major catastrophe has destroyed civilization."
+	},
+	{
+		"title": "Invisible Man",
+		"author": "Ralph Ellison",
+		"publication_date": "1952-04-14",
+		"isbn": "9780679732761",
+		"genres": ["African American Fiction", "Social Commentary"],
+		"description": "A novel about a young African American man whose color renders him invisible, as he describes the surreal and terrifying journey that leads him to a hole beneath a New York City street."
+	},
+	{
+		"title": "Life of Pi",
+		"author": "Yann Martel",
+		"publication_date": "2001-09-11",
+		"isbn": "9780156027328",
+		"genres": ["Adventure Fiction", "Philosophical Novel"],
+		"description": "The story of Pi Patel, a Tamil boy from Pondicherry, who survives 227 days stranded on a lifeboat with a Bengal tiger in the Pacific Ocean."
+	},
+	{
+		"title": "The Handmaid's Tale",
+		"author": "Margaret Atwood",
+		"publication_date": "1985-08-17",
+		"isbn": "9780385490818",
+		"genres": ["Dystopian", "Science Fiction"],
+		"description": "Set in a near-future New England, in a totalitarian state resembling a theonomy, which has overthrown the United States government."
+	},
+	{
+		"title": "Never Let Me Go",
+		"author": "Kazuo Ishiguro",
+		"publication_date": "2005-03-03",
+		"isbn": "9781400078776",
+		"genres": ["Science Fiction", "Dystopian"],
+		"description": "A dystopian science fiction novel that follows a group of students growing up in a darkly skewered version of contemporary England."
+	},
+	{
+		"title": "Blood Meridian",
+		"author": "Cormac McCarthy",
+		"publication_date": "1985-04-28",
+		"isbn": "9780679728757",
+		"genres": ["Western", "Historical Fiction"],
+		"description": "An epic novel of the violence and depravity that attended America's westward expansion, graphically depicted through the travels of the Kid, a teenage runaway."
+	},
+	{
+		"title": "Middlesex",
+		"author": "Jeffrey Eugenides",
+		"publication_date": "2002-09-04",
+		"isbn": "9780312427733",
+		"genres": ["Epic", "Historical Fiction"],
+		"description": "A multigenerational saga that traces the fate of a single gene through three generations, exploring themes of gender identity and reinvention."
+	},
+	{
+		"title": "American Gods",
+		"author": "Neil Gaiman",
+		"publication_date": "2001-06-19",
+		"isbn": "9780755322817",
+		"genres": ["Fantasy", "Mythology"],
+		"description": "A novel blending Americana, fantasy, and various strands of ancient and modern mythology, all centered on the mysterious and taciturn Shadow."
+	},
+	{
+		"title": "The Shadow of the Wind",
+		"author": "Carlos Ruiz Zafón",
+		"publication_date": "2001-01-01",
+		"isbn": "9780143034902",
+		"genres": ["Mystery", "Historical Fiction"],
+		"description": "A young boy in post-war Barcelona finds a book that leads him into a labyrinth of secrets and intrigue that stretches back many decades."
+	},
+	{
+		"title": "Gone Girl",
+		"author": "Gillian Flynn",
+		"publication_date": "2012-06-05",
+		"isbn": "9780307588371",
+		"genres": ["Thriller", "Mystery"],
+		"description": "A thriller that unveils the secrets at the heart of a modern marriage. On the morning of his fifth wedding anniversary, Nick's wife Amy suddenly disappears."
+	},
+	{
+		"title": "The Goldfinch",
+		"author": "Donna Tartt",
+		"publication_date": "2013-10-22",
+		"isbn": "9780316055437",
+		"genres": ["Literary Fiction", "Drama"],
+		"description": "A young boy in New York City, Theo Decker, miraculously survives an accident that takes the life of his mother. Alone and determined to hide his condition, he is drawn into the art underworld."
+	},
+	{
+		"title": "The Nightingale",
+		"author": "Kristin Hannah",
+		"publication_date": "2015-02-03",
+		"isbn": "9780312577223",
+		"genres": ["Historical Fiction", "War"],
+		"description": "Two sisters face brutally different fates during World War II in France. It is a heartbreakingly beautiful novel that celebrates the resilience of the human spirit and the durability of women."
+	},
+	{
+		"title": "A Little Life",
+		"author": "Hanya Yanagihara",
+		"publication_date": "2015-03-10",
+		"isbn": "9780385539258",
+		"genres": ["Contemporary Fiction", "Drama"],
+		"description": "A novel about the lifelong friendship among four men in New York City, testing the limits of human endurance and the boundaries of forgiveness."
+	},
+	{
+		"title": "The Circle",
+		"author": "Dave Eggers",
+		"publication_date": "2013-10-08",
+		"isbn": "9780385351393",
+		"genres": ["Science Fiction", "Dystopian"],
+		"description": "A dystopian novel about a young woman, Mae Holland, who is hired to work for the world's largest and most powerful tech and social media company."
+	},
+	{
+		"title": "All the Light We Cannot See",
+		"author": "Anthony Doerr",
+		"publication_date": "2014-05-06",
+		"isbn": "9781476746586",
+		"genres": ["Historical Fiction", "War"],
+		"description": "A blind French girl and a German boy whose paths collide in occupied France as both try to survive the devastation of World War II."
+	},
+	{
+		"title": "Station Eleven",
+		"author": "Emily St. John Mandel",
+		"publication_date": "2014-09-09",
+		"isbn": "9780385353304",
+		"genres": ["Science Fiction", "Dystopian"],
+		"description": "A novel set in the Great Lakes region after a fictional swine flu pandemic, known as the 'Georgia Flu,' has devastated the world."
+	},
+	{
+		"title": "The Martian",
+		"author": "Andy Weir",
+		"publication_date": "2011-02-11",
+		"isbn": "9780553418026",
+		"genres": ["Science Fiction", "Adventure"],
+		"description": "An astronaut stranded on Mars struggles to survive after being left behind, presumed dead, by his crew."
+	},
+	{
+		"title": "Cloud Atlas",
+		"author": "David Mitchell",
+		"publication_date": "2004-03-03",
+		"isbn": "9780375507250",
+		"genres": ["Science Fiction", "Fantasy"],
+		"description": "A novel consisting of six interlinked stories that take the reader from the remote South Pacific in the nineteenth century to a distant, post-apocalyptic future."
+	},
+	{
+		"title": "The Light We Lost",
+		"author": "Jill Santopolo",
+		"publication_date": "2017-05-09",
+		"isbn": "9780735212756",
+		"genres": ["Romance", "Contemporary Fiction"],
+		"description": "A love story about a woman torn between two men, and the choices that will shape her life and her heart."
+	},
+	{
+		"title": "The Overstory",
+		"author": "Richard Powers",
+		"publication_date": "2018-04-03",
+		"isbn": "9780393356687",
+		"genres": ["Literary Fiction", "Environmental"],
+		"description": "An intricately layered tale of nine strangers brought together by an unfolding natural catastrophe—an immersive and engaging experience into the interlocking lives of humans and trees."
+	},
+	{
+		"title": "Normal People",
+		"author": "Sally Rooney",
+		"publication_date": "2018-08-28",
+		"isbn": "9780571334650",
+		"genres": ["Romance", "Contemporary Fiction"],
+		"description": "The intricate and intimate depiction of the relationship between two teenagers, Marianne and Connell, as they navigate adulthood from their high school days in a small Irish town to their undergraduate years at Trinity College."
+	},
+	{
+		"title": "Where the Crawdads Sing",
+		"author": "Delia Owens",
+		"publication_date": "2018-08-14",
+		"isbn": "9780735219090",
+		"genres": ["Mystery", "Historical Fiction"],
+		"description": "A haunting tale of possible murder in the marshlands of North Carolina, and of Kya, a lonely young girl who has raised herself in the wild."
+	},
+	{
+		"title": "Educated",
+		"author": "Tara Westover",
+		"publication_date": "2018-02-20",
+		"isbn": "9780399590504",
+		"genres": ["Memoir", "Inspirational"],
+		"description": "A memoir recounting the author's journey from her survivalist family in Idaho to earning a PhD from Cambridge University, exploring the struggle for self-invention and the power of education."
+	},
+	{
+		"title": "Circe",
+		"author": "Madeline Miller",
+		"publication_date": "2018-04-10",
+		"isbn": "9780316556347",
+		"genres": ["Fantasy", "Mythology"],
+		"description": "A modern retelling of the life of Circe, a minor goddess in Greek mythology, transforming her from a peripheral figure into a complex, powerful character who challenges the gods."
+	},
+	{
+		"title": "Becoming",
+		"author": "Michelle Obama",
+		"publication_date": "2018-11-13",
+		"isbn": "9781524763138",
+		"genres": ["Memoir", "Inspirational"],
+		"description": "A deeply personal account from the former First Lady of the United States, chronicling her life from her childhood in Chicago through her years in the White House."
+	},
+	{
+		"title": "Little Fires Everywhere",
+		"author": "Celeste Ng",
+		"publication_date": "2017-09-12",
+		"isbn": "9780735224292",
+		"genres": ["Drama", "Mystery"],
+		"description": "An intricate examination of the weight of secrets, the nature of art and identity, and the ferocious pull of motherhood—and the danger of believing that following the rules can avert disaster."
+	},
+	{
+		"title": "The Midnight Library",
+		"author": "Matt Haig",
+		"publication_date": "2020-09-29",
+		"isbn": "9780525559474",
+		"genres": ["Fantasy", "Philosophical"],
+		"description": "A library that exists between life and death, where each book represents a chance to try another life you could have lived, to see how things would be if you had made different choices."
+	},
+	{
+		"title": "American Dirt",
+		"author": "Jeanine Cummins",
+		"publication_date": "2020-01-21",
+		"isbn": "9781250209764",
+		"genres": ["Thriller", "Social Issues"],
+		"description": "A gripping tale of Lydia Quixano Pérez, a bookstore owner in Acapulco, who escapes a drug cartel's assassination with her son and becomes a migrant, journeying toward the U.S. border."
+	},
+	{
+		"title": "The Testaments",
+		"author": "Margaret Atwood",
+		"publication_date": "2019-09-10",
+		"isbn": "9780385543781",
+		"genres": ["Dystopian", "Fiction"],
+		"description": "Set 15 years after the events of 'The Handmaid's Tale,' the regime of Gilead maintains its grip on power, but there are signs it is beginning to rot from within."
+	},
+	{
+		"title": "Shuggie Bain",
+		"author": "Douglas Stuart",
+		"publication_date": "2020-02-11",
+		"isbn": "9780802148506",
+		"genres": ["Fiction", "Literary"],
+		"description": "A portrait of a working-class family in 1980s Glasgow, seen through the eyes of a young boy as he struggles to care for his alcoholic mother."
+	},
+	{
+		"title": "The Vanishing Half",
+		"author": "Brit Bennett",
+		"publication_date": "2020-06-02",
+		"isbn": "9780525536291",
+		"genres": ["Historical Fiction", "Cultural"],
+		"description": "The intertwined stories of twin sisters whose lives take completely different paths, one living as a black woman and the other passing as white."
+	},
+	{
+		"title": "The Night Watchman",
+		"author": "Louise Erdrich",
+		"publication_date": "2020-03-03",
+		"isbn": "9780062671189",
+		"genres": ["Historical Fiction", "Native American"],
+		"description": "Inspired by the life of the author's grandfather, the novel explores the efforts of a Chippewa council night watchman in the 1950s to fight Native dispossession."
+	},
+	{
+		"title": "Hamnet",
+		"author": "Maggie O'Farrell",
+		"publication_date": "2020-07-21",
+		"isbn": "9780735223509",
+		"genres": ["Historical Fiction", "Biographical"],
+		"description": "A bold and imaginative tale about the untimely death of Shakespeare’s son Hamnet and the impact it had on his famed works."
+	},
+	{
+		"title": "A Promised Land",
+		"author": "Barack Obama",
+		"publication_date": "2020-11-17",
+		"isbn": "9781524763169",
+		"genres": ["Memoir", "Politics"],
+		"description": "The first volume of President Obama's memoirs speaks on his early political aspirations and his historic first term in the White House."
+	},
+	{
+		"title": "The Mirror & the Light",
+		"author": "Hilary Mantel",
+		"publication_date": "2020-03-05",
+		"isbn": "9780805096606",
+		"genres": ["Historical Fiction", "Tudor England"],
+		"description": "The final installment of Mantel's Thomas Cromwell trilogy, providing a detailed portrait of the final years of Cromwell's life."
+	},
+	{
+		"title": "Mexican Gothic",
+		"author": "Silvia Moreno-Garcia",
+		"publication_date": "2020-06-30",
+		"isbn": "9780525620785",
+		"genres": ["Horror", "Gothic"],
+		"description": "A terrifying twist on classic gothic horror, set in 1950s Mexico in a creepy, isolated house."
+	},
+	{
+		"title": "The City We Became",
+		"author": "N.K. Jemisin",
+		"publication_date": "2020-03-24",
+		"isbn": "9780316509848",
+		"genres": ["Fantasy", "Urban Fantasy"],
+		"description": "Every city has a soul, and New York’s is rising. Five New Yorkers must come together to defend their city from an ancient evil."
+	},
+	{
+		"title": "Transcendent Kingdom",
+		"author": "Yaa Gyasi",
+		"publication_date": "2020-09-01",
+		"isbn": "9780525658184",
+		"genres": ["Literary Fiction", "Psychological Fiction"],
+		"description": "A deeply moving portrait of a Ghanaian family in Alabama wrestling with faith, science, religion, and the realities of depression."
+	},
+	{
+		"title": "Deacon King Kong",
+		"author": "James McBride",
+		"publication_date": "2020-03-03",
+		"isbn": "9780735216723",
+		"genres": ["Historical Fiction", "Humor"],
+		"description": "In 1969 Brooklyn, a church deacon known as Sportcoat shoots a drug dealer in public, unraveling a mystery that goes back decades."
+	},
+	{
+		"title": "Where the Crawdads Sing",
+		"author": "Delia Owens",
+		"publication_date": "2018-08-14",
+		"isbn": "9780735219090",
+		"genres": ["Fiction", "Mystery"],
+		"description": "A spellbinding blend of mystery, romance, and nature, set in the North Carolina swamps."
+	},
+	{
+		"title": "Educated",
+		"author": "Tara Westover",
+		"publication_date": "2018-02-20",
+		"isbn": "9780399590504",
+		"genres": ["Memoir", "Biography"],
+		"description": "A memoir recounting a journey from a survivalist family to earning a PhD from Cambridge University."
+	},
+	{
+		"title": "Normal People",
+		"author": "Sally Rooney",
+		"publication_date": "2018-08-28",
+		"isbn": "9780735222175",
+		"genres": ["Fiction", "Romance"],
+		"description": "An intricate love story between two young individuals navigating adulthood from different backgrounds."
+	},
+	{
+		"title": "The Overstory",
+		"author": "Richard Powers",
+		"publication_date": "2018-04-03",
+		"isbn": "9780393356687",
+		"genres": ["Fiction", "Environmental"],
+		"description": "An evocative narrative intertwining human lives with the ancient world of forests."
+	},
+	{
+		"title": "The Water Dancer",
+		"author": "Ta-Nehisi Coates",
+		"publication_date": "2019-09-24",
+		"isbn": "9780399590597",
+		"genres": ["Historical Fiction", "Fantasy"],
+		"description": "A powerful tale of slavery and mystical redemption set in the antebellum South."
+	},
+	{
+		"title": "Gideon the Ninth",
+		"author": "Tamsyn Muir",
+		"publication_date": "2019-09-10",
+		"isbn": "9781250313195",
+		"genres": ["Science Fiction", "Fantasy"],
+		"description": "A necromancer and her swordswoman explore a haunted gothic palace in this blend of sci-fi and fantasy."
+	},
+	{
+		"title": "Girl, Woman, Other",
+		"author": "Bernardine Evaristo",
+		"publication_date": "2019-05-02",
+		"isbn": "9780802156983",
+		"genres": ["Fiction", "Cultural"],
+		"description": "A celebration of the lives of British women of color, spanning generations and varying backgrounds."
+	},
+	{
+		"title": "The Nickel Boys",
+		"author": "Colson Whitehead",
+		"publication_date": "2019-07-16",
+		"isbn": "9780385537070",
+		"genres": ["Historical Fiction", "Cultural"],
+		"description": "A harrowing tale based on a real reformatory school in Florida that distorted the lives of many black boys."
+	},
+	{
+		"title": "The Institute",
+		"author": "Stephen King",
+		"publication_date": "2019-09-10",
+		"isbn": "9781982110567",
+		"genres": ["Horror", "Thriller"],
+		"description": "Children with special talents are abducted and subjected to cruel experiments in this chilling novel."
+	},
+	{
+		"title": "The Testaments",
+		"author": "Margaret Atwood",
+		"publication_date": "2019-09-10",
+		"isbn": "9780385543781",
+		"genres": ["Fiction", "Dystopian"],
+		"description": "The sequel to 'The Handmaid's Tale' reveals the inner workings of the oppressive regime of Gilead."
+	},
+	{
+		"title": "The City We Became",
+		"author": "N.K. Jemisin",
+		"publication_date": "2020-03-24",
+		"isbn": "9780316509848",
+		"genres": ["Fantasy", "Urban Fantasy"],
+		"description": "Every city has a soul, and New York’s is rising. Five New Yorkers must come together to defend their city from an ancient evil."
+	},
+	{
+		"title": "Weather",
+		"author": "Jenny Offill",
+		"publication_date": "2020-02-11",
+		"isbn": "9780385351102",
+		"genres": ["Fiction", "Literary"],
+		"description": "A librarian with a once-promising academic career faces the increasingly troubled world with as much courage as she can muster."
+	},
+	{
+		"title": "Such a Fun Age",
+		"author": "Kiley Reid",
+		"publication_date": "2019-12-31",
+		"isbn": "9780525541905",
+		"genres": ["Fiction", "Societal"],
+		"description": "A young black woman is accused of kidnapping while babysitting a white child, sparking a complex conversation around race and privilege."
+	},
+	{
+		"title": "Hidden Valley Road",
+		"author": "Robert Kolker",
+		"publication_date": "2020-04-07",
+		"isbn": "9780385543767",
+		"genres": ["Non-fiction", "Biography"],
+		"description": "The heartrending story of a mid-century American family with twelve children, six of whom were diagnosed with schizophrenia, that became science's great hope in the quest to understand the disease."
+	},
+	{
+		"title": "American Dirt",
+		"author": "Jeanine Cummins",
+		"publication_date": "2020-01-21",
+		"isbn": "9781250209764",
+		"genres": ["Fiction", "Thriller"],
+		"description": "A mother and son flee a drug cartel to cross the US-Mexico border, a harrowing journey for survival."
+	},
+	{
+		"title": "Deacon King Kong",
+		"author": "James McBride",
+		"publication_date": "2020-03-03",
+		"isbn": "9780735216723",
+		"genres": ["Fiction", "Historical"],
+		"description": "In 1969 Brooklyn, a drunken deacon shoots a drug dealer at point blank and sets off a series of events affecting the entire community."
+	},
+	{
+		"title": "The Mirror & the Light",
+		"author": "Hilary Mantel",
+		"publication_date": "2020-03-05",
+		"isbn": "9780805096606",
+		"genres": ["Historical Fiction", "Biographical"],
+		"description": "The stunning conclusion to the trilogy charting the rise and fall of Thomas Cromwell in the court of Henry VIII."
+	},
+	{
+		"title": "The Vanishing Half",
+		"author": "Brit Bennett",
+		"publication_date": "2020-06-02",
+		"isbn": "9780525536291",
+		"genres": ["Fiction", "Historical Fiction"],
+		"description": "Twin sisters from a small, southern black community go on very different life paths, one living as a black woman and the other passing as white."
+	},
+	{
+		"title": "Caste: The Origins of Our Discontents",
+		"author": "Isabel Wilkerson",
+		"publication_date": "2020-08-04",
+		"isbn": "9780593230251",
+		"genres": ["Non-fiction", "Sociology"],
+		"description": "A profound exploration of the unspoken caste system that has shaped America and shows how our lives today are still defined by a hierarchy of human divisions."
+	},
+	{
+		"title": "Mexican Gothic",
+		"author": "Silvia Moreno-Garcia",
+		"publication_date": "2020-06-30",
+		"isbn": "9780525620785",
+		"genres": ["Horror", "Gothic"],
+		"description": "A chilling novel set in a hauntingly beautiful mansion in 1950s Mexico, where a young woman uncovers the dark secrets of her cousin's glamorous and enigmatic new husband."
+	},
+	{
+		"title": "A Promised Land",
+		"author": "Barack Obama",
+		"publication_date": "2020-11-17",
+		"isbn": "9781524763169",
+		"genres": ["Memoir", "Politics"],
+		"description": "A deeply personal account of history in the making—from the president who inspired us to believe in the power of democracy."
+	},
+	{
+		"title": "The Midnight Library",
+		"author": "Matt Haig",
+		"publication_date": "2020-09-29",
+		"isbn": "9780525559474",
+		"genres": ["Fiction", "Fantasy"],
+		"description": "Between life and death, there is a library. Each book provides a chance to try another life you could have lived."
+	},
+	{
+		"title": "Leave the World Behind",
+		"author": "Rumaan Alam",
+		"publication_date": "2020-10-06",
+		"isbn": "9780062667632",
+		"genres": ["Fiction", "Thriller"],
+		"description": "A family vacation is upended by two strangers bearing news of a mysterious blackout spreading across the country."
+	},
+	{
+		"title": "Transcendent Kingdom",
+		"author": "Yaa Gyasi",
+		"publication_date": "2020-09-01",
+		"isbn": "9780525658185",
+		"genres": ["Fiction", "Cultural"],
+		"description": "A Ghanaian family in Alabama struggles with addiction, grief, and faith."
+	},
+	{
+		"title": "The Invisible Life of Addie LaRue",
+		"author": "V.E. Schwab",
+		"publication_date": "2020-10-06",
+		"isbn": "9780765387561",
+		"genres": ["Fantasy", "Historical Fiction"],
+		"description": "A young woman makes a Faustian bargain to live forever but is cursed to be forgotten by everyone she meets."
+	},
+	{
+		"title": "Greenlights",
+		"author": "Matthew McConaughey",
+		"publication_date": "2020-10-20",
+		"isbn": "9780593139134",
+		"genres": ["Memoir", "Self-help"],
+		"description": "A raucous, introspective collection of life stories and philosophies from the actor and philosopher."
+	},
+	{
+		"title": "The Splendid and the Vile",
+		"author": "Erik Larson",
+		"publication_date": "2020-02-25",
+		"isbn": "9780385348713",
+		"genres": ["Historical", "Biography"],
+		"description": "A detailed account of Winston Churchill’s first year as Prime Minister during WWII."
+	},
+	{
+		"title": "Devolution",
+		"author": "Max Brooks",
+		"publication_date": "2020-06-16",
+		"isbn": "9781984826787",
+		"genres": ["Horror", "Science Fiction"],
+		"description": "A terrifying tale of survival in the face of a cataclysmic natural disaster—and its monstrous aftermath."
+	},
+	{
+		"title": "The Four Winds",
+		"author": "Kristin Hannah",
+		"publication_date": "2021-02-02",
+		"isbn": "9780312577230",
+		"genres": ["Historical Fiction", "Drama"],
+		"description": "A powerful American epic about love and heroism and hope, set during the Great Depression."
+	},
+	{
+		"title": "A Time for Mercy",
+		"author": "John Grisham",
+		"publication_date": "2020-10-13",
+		"isbn": "9780385545969",
+		"genres": ["Fiction", "Legal Thriller"],
+		"description": "Jake Brigance is back in this courtroom drama that vividly illustrates the life of a small town lawyer."
+	}
+]

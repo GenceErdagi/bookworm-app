@@ -17,11 +17,3 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
-class Review(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='reviews')
-    rating = models.PositiveIntegerField()
-    comment = models.TextField(blank=True)
-
-    def __str__(self):
-        return f'{self.rating} - {self.user.username} - {self.book.title}'

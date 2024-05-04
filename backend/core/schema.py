@@ -1,11 +1,13 @@
-import graphene
-import books.schema
-import users.schema
+import strawberry
+from books.schema import Query as BookQuery, Mutation as BookMutation
+from users.schema import Query as UserQuery, Mutation as UserMutation
 
-class Query(books.schema.Query, users.schema.Query, graphene.ObjectType):
+@strawberry.type
+class Query(BookQuery, UserQuery):
     pass
 
-class Mutation(books.schema.Mutation, users.schema.Mutation, graphene.ObjectType):
+@strawberry.type
+class Mutation(BookMutation, UserMutation):
     pass
 
-schema = graphene.Schema(query=Query, mutation=Mutation)
+schema = strawberry.Schema(query=Query, mutation=Mutation)
