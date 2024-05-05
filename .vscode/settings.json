@@ -14,8 +14,10 @@
   },
   "hide-files.files": [],
   "cSpell.words": [
+    "asgiref",
     "dateutil",
     "graphiql",
+    "simplejwt",
     "viewsets"
   ]
 }

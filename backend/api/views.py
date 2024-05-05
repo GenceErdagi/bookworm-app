@@ -1,40 +1,39 @@
 from rest_framework import viewsets, permissions
-from django.utils.decorators import method_decorator
-from asgiref.sync import sync_to_async
-from .models import Genre, Book, UserProfile, Review
-from .serializers import GenreSerializer, BookSerializer, UserProfileSerializer, ReviewSerializer
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
+from .models import Book, Genre, Review, UserProfile
+from .serializers import BookSerializer, GenreSerializer, ReviewSerializer, UserProfileSerializer
 from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly, IsSelfOrReadOnly
 
-class AsyncViewSetMixin:
-    """
-    Mixin to convert a viewset to support asynchronous handling.
-    """
-    @method_decorator(sync_to_async)
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
-
-class GenreViewSet(AsyncViewSetMixin, viewsets.ModelViewSet):
-    queryset = Genre.objects.all()
-    serializer_class = GenreSerializer
-    permission_classes = [IsAdminOrReadOnly]
-
-class BookViewSet(AsyncViewSetMixin, viewsets.ModelViewSet):
+class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAdminOrReadOnly]
 
-class UserProfileViewSet(AsyncViewSetMixin, viewsets.ModelViewSet):
-    queryset = UserProfile.objects.all()
-    serializer_class = UserProfileSerializer
-    permission_classes = [IsSelfOrReadOnly]
+class GenreViewSet(viewsets.ModelViewSet):
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAdminOrReadOnly]
 
-class ReviewViewSet(AsyncViewSetMixin, viewsets.ModelViewSet):
+class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    authentication_classes = [JWTAuthentication]
+
     def get_permissions(self):
-        if self.action == 'list' or self.action == 'retrieve':
+        """
+        Instantiates and returns the list of permissions that this view requires.
+        """
+        if self.action in ['list', 'retrieve']:
             permission_classes = [permissions.AllowAny]
         else:
-            permission_classes = [IsOwnerOrReadOnly]
+            permission_classes = [IsOwnerOrReadOnly, permissions.IsAuthenticated]
         return [permission() for permission in permission_classes]
 
+class UserProfileViewSet(viewsets.ModelViewSet):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsSelfOrReadOnly]
