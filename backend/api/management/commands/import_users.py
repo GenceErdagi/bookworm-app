@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand
 import json
 import random
-from django.db import transaction
 
 from api.models import UserProfile, Review, Book
 
@@ -44,7 +43,6 @@ class Command(BaseCommand):
         user_profile.save()
 
     def add_reviews(self, user_profile, books):
-        # Define sample comment options for reviews
         comment_options = {
             1: [
                 "This was a huge disappointment and a waste of time.",
@@ -157,7 +155,7 @@ class Command(BaseCommand):
                 "An epic journey that was a pleasure from start to finish."
             ]
         }
-        ratings_weights = {1: 0.05, 2: 0.1, 3: 0.15, 4: 0.3, 5: 0.4}  # Use your previous settings to ensure average between 3.9 and 5
+        ratings_weights = {1: 0, 2: 0.1, 3: 0.1, 4: 0.4, 5: 0.4}  
         for book in books:
             score = random.choices(population=[1, 2, 3, 4, 5], weights=ratings_weights, k=1)[0]
             comment = random.choice(comment_options[score])

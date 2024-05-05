@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 class Genre(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
@@ -30,7 +30,10 @@ class UserProfile(AbstractUser):
 class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='reviews')
-    rating = models.PositiveIntegerField()
+    rating = models.PositiveIntegerField(validators=[
+            MaxValueValidator(5),
+            MinValueValidator(1)
+        ])
     comment = models.TextField(blank=True)
 
     def __str__(self):
