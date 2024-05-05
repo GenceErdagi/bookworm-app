@@ -18,7 +18,6 @@ env = environ.Env()
 # Assuming the .env file is located next to the settings.py file
 environ.Env.read_env(env_file='.env')
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,9 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-r4kgapugche&2o1o7$pa2m2y989$aonp3!i1@!w@kg=r%3l_p)'
 
-SECRET_KEY = env('SECRET_KEY',default='S3cr3t_k3y')
-DEBUG = env.bool('DEBUG', default=False)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -45,15 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "strawberry.django",
-    'books',
-    'users'
+    "api",
+    "rest_framework",
 ]
 
-STRAWBERRY_DJANGO = {
-    "FIELD_DESCRIPTION_FROM_HELP_TEXT": True,
-    "TYPE_DESCRIPTION_FROM_MODEL_DOCSTRING": True,
-}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'api.UserProfile'
 
 ROOT_URLCONF = 'core.urls'
 
@@ -114,9 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-GRAPHENE = {
-    'SCHEMA': 'core.schema.schema'  # Path to the schema
-}
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -138,4 +131,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'users.UserProfile'

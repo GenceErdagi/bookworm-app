@@ -2,8 +2,8 @@ from django.core.management.base import BaseCommand
 import json
 import random
 from django.db import transaction
-from books.models import Book
-from users.models import UserProfile, Review
+
+from api.models import UserProfile, Review, Book
 
 class Command(BaseCommand):
     help = 'Imports users and assigns them wishlists and reviews'

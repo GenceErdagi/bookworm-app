@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from books.models import Book, Genre
+from api.models import Book, Genre
 from dateutil.parser import parse
 import json
 
