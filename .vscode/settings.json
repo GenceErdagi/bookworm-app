@@ -18,6 +18,7 @@
     "dateutil",
     "graphiql",
     "simplejwt",
+    "userprofiles",
     "viewsets"
   ]
 }

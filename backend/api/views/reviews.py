@@ -2,47 +2,66 @@ from rest_framework.decorators import api_view, permission_classes, authenticati
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework.permissions import IsAuthenticated, AllowAny
-
 from api.models import Review
 from api.serializers import ReviewSerializer
-from api.permissions import IsOwnerOrReadOnly
+from api.permissions import IsOwnerOrReadOnly, permissions
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 @authentication_classes([JWTAuthentication])
-def review_list_create(request):
-    if request.method == 'GET':
-        reviews = Review.objects.all()
-        serializer = ReviewSerializer(reviews, many=True)
+@permission_classes([permissions.AllowAny])
+def review_list(request):
+    reviews = Review.objects.all()
+    serializer = ReviewSerializer(reviews, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+@authentication_classes([JWTAuthentication])
+@permission_classes([permissions.IsAuthenticated])
+def review_create(request):
+    serializer = ReviewSerializer(data=request.data, context={'request': request})
+    if serializer.is_valid():
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@authentication_classes([JWTAuthentication])
+@permission_classes([permissions.AllowAny])
+def review_retrieve(request, pk):
+    try:
+        review = Review.objects.get(pk=pk)
+        serializer = ReviewSerializer(review)
         return Response(serializer.data)
+    except Review.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
-    elif request.method == 'POST':
-        serializer = ReviewSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(user=request.user)  # Ensure the review is saved with the logged-in user
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['PUT'])
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsOwnerOrReadOnly])
-def review_detail(request, pk):
+def review_update(request, pk):
     try:
         review = Review.objects.get(pk=pk)
     except Review.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
-    if request.method == 'GET':
-        serializer = ReviewSerializer(review)
+    serializer = ReviewSerializer(review, data=request.data, context={'request': request})
+    if serializer.is_valid():
+        if review.user != request.user:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+        serializer.save()
         return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    elif request.method == 'PUT':
-        serializer = ReviewSerializer(review, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()  # The permission ensures only the owner can update
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['DELETE'])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsOwnerOrReadOnly])
+def review_delete(request, pk):
+    try:
+        review = Review.objects.get(pk=pk)
+    except Review.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
-    elif request.method == 'DELETE':
-        review.delete()  # The permission ensures only the owner can delete
-        return Response(status=status.HTTP_204_NO_CONTENT)
+    if review.user != request.user:
+        return Response(status=status.HTTP_403_FORBIDDEN)
+    review.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
