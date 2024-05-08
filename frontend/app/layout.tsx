@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import ReactQueryProvider from '@/providers/ReactQueryProvider';
 import Navbar from '@/components/ui/navbar';
 import '@fontsource/inter';
 
@@ -17,10 +16,8 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body>
-				<ReactQueryProvider>
-					<Navbar />
-					{children}
-				</ReactQueryProvider>
+				<Navbar />
+				{children}
 			</body>
 		</html>
 	);

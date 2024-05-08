@@ -1,9 +1,9 @@
-import Deneme from '@/components/Home/Deneme';
+import MainPage from '@/components/Home/MainPage';
 
 export default async function Home() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
-			<Deneme />
+			<MainPage />
 		</main>
 	);
 }

@@ -1,34 +1,34 @@
 // services/concrete/BookService.ts
-import axios from 'axios';
-import { API_URL } from '@/utils/apiConfig';
+import { injectable } from 'tsyringe';
 import IBookService from '@/services/abstract/IBookService';
 import Book from '@/types/Book';
+import fetchAPI from '@/lib/api';
 
+@injectable()
 export default class BookService implements IBookService {
 	async getBooks(): Promise<Book[]> {
-		const response = await axios.get(`${API_URL}/books/`);
-		return response.data;
+		return fetchAPI('books/');
 	}
 
 	async getBookById(id: number): Promise<Book> {
-		const response = await axios.get(`${API_URL}/books/${id}/`);
-		return response.data;
+		return fetchAPI(`books/${id}/`);
 	}
 
-	async createBook(bookData: Partial<Book>): Promise<Book> {
-		const response = await axios.post(`${API_URL}/books/create/`, bookData);
-		return response.data;
+	async createBook(data: Partial<Book>): Promise<Book> {
+		return fetchAPI('books/create/', {
+			method: 'POST',
+			body: JSON.stringify(data)
+		});
 	}
 
-	async updateBook(id: number, bookData: Partial<Book>): Promise<Book> {
-		const response = await axios.put(
-			`${API_URL}/books/${id}/update/`,
-			bookData
-		);
-		return response.data;
+	async updateBook(id: number, data: Partial<Book>): Promise<Book> {
+		return fetchAPI(`books/${id}/update/`, {
+			method: 'PUT',
+			body: JSON.stringify(data)
+		});
 	}
 
 	async deleteBook(id: number): Promise<void> {
-		await axios.delete(`${API_URL}/books/${id}/delete/`);
+		await fetchAPI(`books/${id}/delete/`, { method: 'DELETE' });
 	}
 }

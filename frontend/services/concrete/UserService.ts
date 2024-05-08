@@ -1,46 +1,60 @@
-import axios from 'axios';
-import UserProfile from '@/types/User';
+// services/concrete/UserService.ts
+import { injectable } from 'tsyringe';
 import IUserService from '@/services/abstract/IUserService';
-import { API_URL } from '@/utils/apiConfig';
+import UserProfile from '@/types/User';
+import fetchAPI from '@/lib/api';
 
-export const userService: IUserService = {
-	loginUser: async (username: string, password: string) => {
-		const response = await axios.post(`${API_URL}/token`, {
-			username,
-			password
+@injectable()
+export default class UserService implements IUserService {
+	async loginUser(
+		username: string,
+		password: string
+	): Promise<{
+		access: string;
+		refresh?: string | undefined;
+		user?: UserProfile | undefined;
+	}> {
+		const response = await fetchAPI('token', {
+			method: 'POST',
+			body: JSON.stringify({ username, password })
 		});
-		if (response.data.access) {
-			localStorage.setItem('token', response.data.access);
+		if (response.access) {
+			localStorage.setItem('token', response.access);
 		}
-		return response.data;
-	},
-	refreshToken: async (token: string) => {
-		const response = await axios.post(`${API_URL}/token/refresh`, {
-			refresh: token
-		});
-		return response.data;
-	},
-	verifyToken: async (token: string) => {
-		const response = await axios.post(`${API_URL}/token/verify`, { token });
-		return response.data;
-	},
-	fetchUserProfile: async (userId: number): Promise<UserProfile> => {
-		const response = await axios.get(`${API_URL}/userprofiles/${userId}/`);
-		return response.data;
-	},
-	updateUserProfile: async (userId: number, data: Partial<UserProfile>) => {
-		const response = await axios.put(
-			`${API_URL}/userprofiles/${userId}/update/`,
-			data
-		);
-		return response.data;
-	},
-	deleteUserProfile: async (userId: number) => {
-		const response = await axios.delete(
-			`${API_URL}/userprofiles/${userId}/delete/`
-		);
-		return response.data;
+		return response;
 	}
-};
 
-export default userService;
+	async refreshToken(
+		token: string
+	): Promise<{ access: string; refresh?: string | undefined }> {
+		return fetchAPI('token/refresh', {
+			method: 'POST',
+			body: JSON.stringify({ refresh: token })
+		});
+	}
+
+	async verifyToken(token: string): Promise<any> {
+		return fetchAPI('token/verify', {
+			method: 'POST',
+			body: JSON.stringify({ token })
+		});
+	}
+
+	async fetchUserProfile(userId: number): Promise<UserProfile> {
+		return fetchAPI(`userprofiles/${userId}/`);
+	}
+
+	async updateUserProfile(
+		userId: number,
+		data: Partial<UserProfile>
+	): Promise<UserProfile> {
+		return fetchAPI(`userprofiles/${userId}/update/`, {
+			method: 'PUT',
+			body: JSON.stringify(data)
+		});
+	}
+
+	async deleteUserProfile(userId: number): Promise<void> {
+		await fetchAPI(`userprofiles/${userId}/delete/`, { method: 'DELETE' });
+	}
+}

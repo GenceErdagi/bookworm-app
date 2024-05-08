@@ -10,7 +10,16 @@ from api.permissions import IsOwnerOrReadOnly, permissions
 @authentication_classes([JWTAuthentication])
 @permission_classes([permissions.AllowAny])
 def review_list(request):
+    book_id = request.query_params.get('book_id')
+    user_id = request.query_params.get('user_id')
+    
     reviews = Review.objects.all()
+    
+    if book_id:
+        reviews = reviews.filter(book_id=book_id)
+    if user_id:
+        reviews = reviews.filter(user_id=user_id)
+        
     serializer = ReviewSerializer(reviews, many=True)
     return Response(serializer.data)
 
@@ -34,6 +43,7 @@ def review_retrieve(request, pk):
         return Response(serializer.data)
     except Review.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
+    
 
 @api_view(['PUT'])
 @authentication_classes([JWTAuthentication])

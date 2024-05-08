@@ -10,9 +10,12 @@
     "**/__pycache__": true,
     "**/.next": true,
     "**/.venv": true,
-    "**/node_modules": true
+    "**/node_modules": true,
+    "backend/media": true
   },
-  "hide-files.files": [],
+  "hide-files.files": [
+    "backend/media"
+  ],
   "cSpell.words": [
     "asgiref",
     "dateutil",

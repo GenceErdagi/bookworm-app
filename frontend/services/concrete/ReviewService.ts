@@ -1,32 +1,42 @@
 // services/concrete/ReviewService.ts
-import axios from 'axios';
-import { IReviewService } from '@/services/abstract/IReviewService';
+import { injectable } from 'tsyringe';
+import IReviewService from '@/services/abstract/IReviewService';
 import Review from '@/types/Review';
+import fetchAPI from '@/lib/api';
 
-export class ReviewService implements IReviewService {
-	private apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/reviews`;
+@injectable()
+export default class ReviewService implements IReviewService {
+	async getReviewsByUser(userId: number): Promise<Review[]> {
+		return fetchAPI(`reviews/?user_id=${userId}`);
+	}
+
+	async getReviewsByBook(bookId: number): Promise<Review[]> {
+		return fetchAPI(`reviews/?book_id=${bookId}`);
+	}
 
 	async getReviews(): Promise<Review[]> {
-		const response = await axios.get(this.apiUrl);
-		return response.data;
+		return fetchAPI('reviews/');
 	}
 
 	async getReviewById(id: number): Promise<Review> {
-		const response = await axios.get(`${this.apiUrl}/${id}`);
-		return response.data;
+		return fetchAPI(`reviews/${id}/`);
 	}
 
 	async createReview(data: Partial<Review>): Promise<Review> {
-		const response = await axios.post(this.apiUrl, data);
-		return response.data;
+		return fetchAPI('reviews/create/', {
+			method: 'POST',
+			body: JSON.stringify(data)
+		});
 	}
 
 	async updateReview(id: number, data: Partial<Review>): Promise<Review> {
-		const response = await axios.put(`${this.apiUrl}/${id}`, data);
-		return response.data;
+		return fetchAPI(`reviews/${id}/update/`, {
+			method: 'PUT',
+			body: JSON.stringify(data)
+		});
 	}
 
 	async deleteReview(id: number): Promise<void> {
-		await axios.delete(`${this.apiUrl}/${id}`);
+		await fetchAPI(`reviews/${id}/delete/`, { method: 'DELETE' });
 	}
 }

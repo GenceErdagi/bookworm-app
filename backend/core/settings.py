@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','0.0.0.0'] 
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','0.0.0.0',"web"] 
 
 # Application definition
 
@@ -53,6 +53,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://web:3000",
 ]
 
 SIMPLE_JWT = {

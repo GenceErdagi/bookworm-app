@@ -1,7 +1,7 @@
 // services/abstract/IGenreService.ts
 import Genre from '@/types/Genre';
 
-export interface IGenreService {
+export default interface IGenreService {
 	getGenres(): Promise<Genre[]>;
 	getGenreById(id: number): Promise<Genre>;
 	createGenre(data: Partial<Genre>): Promise<Genre>;
