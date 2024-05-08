@@ -101,7 +101,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+MEDIA_URL = '/media/'
+BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 

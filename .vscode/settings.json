@@ -16,9 +16,11 @@
   "cSpell.words": [
     "asgiref",
     "dateutil",
+    "fontsource",
     "graphiql",
     "simplejwt",
     "userprofiles",
-    "viewsets"
+    "viewsets",
+    "zustand"
   ]
 }
