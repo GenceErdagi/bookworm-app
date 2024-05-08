@@ -37,7 +37,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+      NEXT_PUBLIC_API_URL_SERVER: ${NEXT_PUBLIC_API_URL_SERVER}
+      NEXT_PUBLIC_API_URL_CLIENT: ${NEXT_PUBLIC_API_URL_CLIENT}
     depends_on:
       - web
 

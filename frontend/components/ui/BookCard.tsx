@@ -3,8 +3,7 @@ import Book from '@/types/Book';
 import { StarIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 import React, { FC } from 'react';
-import Image from 'next/image';
-import { MEDIA_URL } from '@/lib/apiConfig';
+import { MEDIA_URL } from '@/lib/api';
 interface BookCardProps {
 	book: Book;
 }

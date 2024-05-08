@@ -5,6 +5,9 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from api.models import UserProfile
 from api.serializers import UserProfileSerializer
 from api.permissions import IsSelfOrReadOnly
+from rest_framework_simplejwt.authentication import JWTAuthentication
+JWT_authenticator = JWTAuthentication()
+
 
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])
@@ -13,6 +16,9 @@ def user_profile_list(request):
     users = UserProfile.objects.all()
     serializer = UserProfileSerializer(users, many=True)
     return Response(serializer.data)
+
+# authenitcate() verifies and decode the token
+# if token is invalid, it raises an exception and returns 401
 
 @api_view(['GET'])
 @authentication_classes([JWTAuthentication])

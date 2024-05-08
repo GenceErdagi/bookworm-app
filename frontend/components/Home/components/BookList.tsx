@@ -1,22 +1,20 @@
 'use client';
 import StarIcon from '@/components/ui/star-icon';
 import Image from 'next/image';
-import { MEDIA_URL } from '@/lib/apiConfig';
-import Book from '@/types/Book';
-import BookCard from '@/components/ui/BookCard';
 
 export default function Component() {
 	return (
 		<section className='w-full pt-12 md:pt-24 lg:pt-32'>
 			<div className='container grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 xl:gap-24'>
 				<div className='flex flex-col items-start space-y-6'>
-					<Image
-						alt='Book Cover'
-						className='aspect-[2/3] w-full max-w-[300px] rounded-lg object-cover'
-						height={600}
-						src={`${MEDIA_URL}/placeholder.svg`}
-						width={400}
-					/>
+					<div className='relative w-full h-96 md:h-96 lg:h-128'>
+						<Image
+							alt='Book Cover'
+							className='object-cover rounded-lg'
+							layout='fill'
+							src='https://images.unsplash.com/photo-1612837087110-3b8b0c5b6b3b'
+						/>
+					</div>
 					<div className='space-y-2'>
 						<h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none'>
 							The Alchemist

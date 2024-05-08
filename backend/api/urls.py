@@ -9,11 +9,13 @@ from api.views.books import book_create, book_delete, book_list, book_retrieve, 
 from api.views.genres import  genre_create, genre_delete, genre_list, genre_retrieve, genre_update
 from api.views.reviews import review_create, review_delete, review_list, review_retrieve, review_update
 from api.views.userProfiles import user_profile_delete, user_profile_list, user_profile_retrieve, user_profile_update
+from api.views.customTokenObtainPair import CustomTokenObtainPairView
+
 
 
 
 urlpatterns = [
-    path('token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token', CustomTokenObtainPairView.as_view() , name='token_obtain_pair'),
     path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
     path('token/verify', TokenVerifyView.as_view(), name='token_verify'),
     path('books/', book_list, name='book-list'),

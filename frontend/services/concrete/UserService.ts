@@ -12,14 +12,14 @@ export default class UserService implements IUserService {
 	): Promise<{
 		access: string;
 		refresh?: string | undefined;
-		user?: UserProfile | undefined;
+		user_id?: number | undefined;
 	}> {
 		const response = await fetchAPI('token', {
 			method: 'POST',
 			body: JSON.stringify({ username, password })
 		});
 		if (response.access) {
-			localStorage.setItem('token', response.access);
+			localStorage.setItem('token/', response.access);
 		}
 		return response;
 	}
@@ -27,7 +27,7 @@ export default class UserService implements IUserService {
 	async refreshToken(
 		token: string
 	): Promise<{ access: string; refresh?: string | undefined }> {
-		return fetchAPI('token/refresh', {
+		return fetchAPI('token/refresh/', {
 			method: 'POST',
 			body: JSON.stringify({ refresh: token })
 		});

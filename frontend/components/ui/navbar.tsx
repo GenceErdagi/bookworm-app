@@ -1,14 +1,14 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/xYHqD5MkVkT
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+'use client';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
 
 export default function Navbar() {
+	const router = useRouter();
+	const { user } = useAuth();
 	return (
-		<nav className='fixed inset-x-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-950/90'>
+		<nav className='inset-x-0 top-0 z-50 bg-white shadow-sm dark:bg-gray-950/90'>
 			<div className='w-full max-w-7xl mx-auto px-4'>
 				<div className='flex justify-between h-14 items-center'>
 					<Link
@@ -44,15 +44,32 @@ export default function Navbar() {
 							Contact
 						</Link>
 					</nav>
-					<div className='flex items-center gap-4'>
-						<Button
-							size='sm'
-							variant='outline'
-						>
-							Sign in
-						</Button>
-						<Button size='sm'>Sign up</Button>
-					</div>
+					{user ? (
+						<div className='flex items-center gap-4'>
+							<Button
+								size='sm'
+								variant='outline'
+								onClick={() => {
+									router.push('/auth/profile');
+								}}
+							>
+								Profile
+							</Button>
+						</div>
+					) : (
+						<div className='flex items-center gap-4'>
+							<Button
+								size='sm'
+								variant='outline'
+								onClick={() => {
+									router.push('/auth/login');
+								}}
+							>
+								Sign in
+							</Button>
+							<Button size='sm'>Sign up</Button>
+						</div>
+					)}
 				</div>
 			</div>
 		</nav>

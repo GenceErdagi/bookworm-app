@@ -5,7 +5,11 @@ interface IUserService {
 	loginUser(
 		username: string,
 		password: string
-	): Promise<{ access: string; refresh?: string; user?: UserProfile }>;
+	): Promise<{
+		access: string;
+		refresh?: string;
+		user_id?: number | undefined;
+	}>;
 	refreshToken(token: string): Promise<{ access: string; refresh?: string }>;
 	verifyToken(token: string): Promise<any>;
 	fetchUserProfile(userId: number): Promise<UserProfile>;
