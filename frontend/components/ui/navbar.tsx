@@ -13,10 +13,10 @@ export default function Navbar() {
 				<div className='flex justify-between h-14 items-center'>
 					<Link
 						className='flex items-center'
-						href='#'
+						href='/'
 					>
 						<MountainIcon className='h-6 w-6' />
-						<span className='sr-only'>Acme Inc</span>
+						<span className='sr-only'>Bookworm</span>
 					</Link>
 					<nav className='hidden md:flex gap-4'>
 						<Link

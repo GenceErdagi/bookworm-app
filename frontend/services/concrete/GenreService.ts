@@ -7,11 +7,11 @@ import fetchAPI from '@/lib/api';
 @injectable()
 export default class GenreService implements IGenreService {
 	async getGenres(): Promise<Genre[]> {
-		return fetchAPI('genre/');
+		return fetchAPI('genres/');
 	}
 
 	async getGenreById(id: number): Promise<Genre> {
-		return fetchAPI(`genre/${id}/`);
+		return fetchAPI(`genres/${id}/`);
 	}
 
 	async createGenre(data: Partial<Genre>): Promise<Genre> {
