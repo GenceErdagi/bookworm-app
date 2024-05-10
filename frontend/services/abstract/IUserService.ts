@@ -1,5 +1,5 @@
 // services/IUserService.ts
-import UserProfile from '@/types/User';
+import User from '@/types/User';
 
 interface IUserService {
 	loginUser(
@@ -12,12 +12,10 @@ interface IUserService {
 	}>;
 	refreshToken(token: string): Promise<{ access: string; refresh?: string }>;
 	verifyToken(token: string): Promise<any>;
-	fetchUserProfile(userId: number): Promise<UserProfile>;
-	updateUserProfile(
-		userId: number,
-		data: Partial<UserProfile>
-	): Promise<UserProfile>;
-	deleteUserProfile(userId: number): Promise<void>;
+	fetchUser(userId: number): Promise<User>;
+	getUsers(): Promise<User[]>;
+	updateUser(userId: number, data: Partial<User>): Promise<User>;
+	deleteUser(userId: number): Promise<void>;
 }
 
 export default IUserService;

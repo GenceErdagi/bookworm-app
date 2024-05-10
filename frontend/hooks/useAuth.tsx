@@ -8,11 +8,11 @@ import {
 	FC,
 	ReactNode
 } from 'react';
-import UserProfile from '@/types/User';
+import User from '@/types/User';
 import ServiceContainer from '@/services/concrete/ServiceContainer';
 
 interface AuthContextType {
-	user: UserProfile | null;
+	user: User | null;
 	login: (username: string, password: string) => Promise<void>;
 	logout: () => void;
 }
@@ -22,7 +22,7 @@ interface AuthProviderProps {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const userService = ServiceContainer.getInstance().getUserService();
 export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
-	const [user, setUser] = useState<UserProfile | null>(null);
+	const [user, setUser] = useState<User | null>(null);
 
 	const login = async (username: string, password: string) => {
 		try {
@@ -31,7 +31,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 			if (response.access && response.user_id) {
 				localStorage.setItem('token', response.access);
 				const { user_id } = response;
-				const user = await userService.fetchUserProfile(user_id);
+				const user = await userService.fetchUser(user_id);
 				setUser(user);
 				localStorage.setItem('user', JSON.stringify(user));
 			} else {
@@ -50,7 +50,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
 	useEffect(() => {
 		const initializeUser = async () => {
-			const user: UserProfile = JSON.parse(
+			const user: User = JSON.parse(
 				localStorage.getItem('user')?.toString() || '{}'
 			);
 			if (user.id) {

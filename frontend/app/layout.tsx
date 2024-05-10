@@ -20,6 +20,9 @@ export default function RootLayout({
 				<AuthProvider>
 					<Navbar />
 					{children}
+					<footer className='bg-gray-900 p-4 text-center text-white'>
+						<p>© 2023 Bookworm App. All rights reserved.</p>
+					</footer>
 				</AuthProvider>
 			</body>
 		</html>

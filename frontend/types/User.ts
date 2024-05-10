@@ -1,6 +1,6 @@
 import Book from './Book';
 
-export default interface UserProfile {
+export default interface User {
 	id: number;
 	username: string;
 	email: string;

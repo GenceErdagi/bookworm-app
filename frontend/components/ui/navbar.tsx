@@ -27,21 +27,9 @@ export default function Navbar() {
 						</Link>
 						<Link
 							className='font-medium flex items-center text-sm transition-colors hover:underline'
-							href='#'
+							href='/books'
 						>
-							About
-						</Link>
-						<Link
-							className='font-medium flex items-center text-sm transition-colors hover:underline'
-							href='#'
-						>
-							Services
-						</Link>
-						<Link
-							className='font-medium flex items-center text-sm transition-colors hover:underline'
-							href='#'
-						>
-							Contact
+							Books
 						</Link>
 					</nav>
 					{user ? (

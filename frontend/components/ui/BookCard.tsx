@@ -6,6 +6,7 @@ import React, { FC } from 'react';
 import { MEDIA_URL } from '@/lib/api';
 import { Button } from './button';
 import Image from 'next/image';
+import Rating from './Rating';
 interface BookCardProps {
 	book: Book;
 }
@@ -21,7 +22,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
 					alt='Book Cover'
 					className='h-[400px] object-cover aspect-[3/4] w-full transition-all group-hover:scale-105'
 					height={400}
-					src={`${MEDIA_URL}${book.cover_image}`}
+					src={`http://127.0.0.1:8000/${book.cover_image}`}
 					width={300}
 				/>
 				<div className=''>
@@ -30,7 +31,11 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
 						<p className='text-gray-500 dark:text-gray-400 mb-2'>
 							{book.author}
 						</p>
-						<div className='flex  flex-wrap gap-4'>
+						{
+							//TODO: Add Fix Rating
+						}
+						<Rating rating={4.5} />
+						<div className='flex  flex-wrap gap-4 mt-4 mb-2'>
 							{book.genres.map((genre, i) => (
 								<span
 									key={i}

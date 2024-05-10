@@ -1,8 +1,12 @@
+import BookCard from '@/components/ui/bookCard';
+import Book from '@/types/Book';
 import React, { FC } from 'react';
 
-interface CarouselProps {}
+interface CarouselProps {
+	books: Book[];
+}
 
-const Carousel: FC<CarouselProps> = ({}) => {
+const Carousel: FC<CarouselProps> = ({ books }) => {
 	return (
 		<section className='w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800'>
 			<div className='container px-4 md:px-6'>
@@ -17,7 +21,14 @@ const Carousel: FC<CarouselProps> = ({}) => {
 						</p>
 					</div>
 				</div>
-				<div className='mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'></div>
+				<div className='mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+					{books.map((book) => (
+						<BookCard
+							key={book.id}
+							book={book}
+						/>
+					))}
+				</div>
 			</div>
 		</section>
 	);

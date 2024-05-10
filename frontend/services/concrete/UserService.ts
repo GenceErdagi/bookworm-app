@@ -1,7 +1,7 @@
 // services/concrete/UserService.ts
 import { injectable } from 'tsyringe';
 import IUserService from '@/services/abstract/IUserService';
-import UserProfile from '@/types/User';
+import User from '@/types/User';
 import fetchAPI from '@/lib/api';
 
 @injectable()
@@ -39,22 +39,21 @@ export default class UserService implements IUserService {
 			body: JSON.stringify({ token })
 		});
 	}
-
-	async fetchUserProfile(userId: number): Promise<UserProfile> {
+	getUsers(): Promise<User[]> {
+		return fetchAPI(`userprofiles/`);
+	}
+	async fetchUser(userId: number): Promise<User> {
 		return fetchAPI(`userprofiles/${userId}/`);
 	}
 
-	async updateUserProfile(
-		userId: number,
-		data: Partial<UserProfile>
-	): Promise<UserProfile> {
+	async updateUser(userId: number, data: Partial<User>): Promise<User> {
 		return fetchAPI(`userprofiles/${userId}/update/`, {
 			method: 'PUT',
 			body: JSON.stringify(data)
 		});
 	}
 
-	async deleteUserProfile(userId: number): Promise<void> {
+	async deleteUser(userId: number): Promise<void> {
 		await fetchAPI(`userprofiles/${userId}/delete/`, { method: 'DELETE' });
 	}
 }

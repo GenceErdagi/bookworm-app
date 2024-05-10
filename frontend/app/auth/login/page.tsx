@@ -31,16 +31,14 @@ const Page = () => {
 	};
 
 	return (
-		<div className='mt-10 flex-grow mb-10'>
-			<Card className='max-w-2xl mx-auto'>
+		<div className='mt-10   h-screen items-center justify-center mb-10 px-4'>
+			<Card className='max-w-2xlmx-auto'>
 				<CardHeader>
-					<CardTitle>Admin User Management</CardTitle>
-					<CardDescription>
-						Enter user details to create a new user
-					</CardDescription>
+					<CardTitle>Sign In</CardTitle>
+					<CardDescription>Enter user details to sign in</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<div className='space-y-4'>
+					<div className='space-y-4 '>
 						<div className='space-y-2'>
 							<Label htmlFor='username'>Username</Label>
 							<Input
@@ -50,15 +48,6 @@ const Page = () => {
 								type='username'
 								onChange={(e) => setUsername(e.target.value)}
 								value={username}
-							/>
-						</div>
-						<div className='space-y-2'>
-							<Label htmlFor='email'>Email</Label>
-							<Input
-								id='email'
-								placeholder='johndoe@example.com'
-								required
-								type='email'
 							/>
 						</div>
 
