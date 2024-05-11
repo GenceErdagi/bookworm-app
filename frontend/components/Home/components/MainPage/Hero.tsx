@@ -36,6 +36,7 @@ export default function Hero({ book }: { book: Book }) {
 					</div>
 				</div>
 				<Link href={`/books/${book.id}`}>
+					{/*TODO:Migrate to next/image*/}
 					<img
 						alt='Book Cover'
 						className='mx-auto aspect-square object-contain overflow-hidden rounded-xl sm:w-full h- lg:order-last hover:cursor-pointer'

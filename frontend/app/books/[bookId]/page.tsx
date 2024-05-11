@@ -64,6 +64,7 @@ const Page: FC<PageProps> = ({}) => {
 			<>
 				<div className='grid md:grid-cols-2 gap-6 lg:gap-12 items-start max-w-6xl px-4 mx-auto py-6'>
 					<div className='grid gap-4 md:gap-10 items-start'>
+						{/*TODO:Migrate to next/image*/}
 						<img
 							alt='Book Cover'
 							className='aspect-[2/3] object-contain border border-gray-200 w-full rounded-lg overflow-hidden dark:border-gray-800'

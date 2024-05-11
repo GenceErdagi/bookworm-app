@@ -18,6 +18,7 @@ const BookCard: FC<BookCardProps> = ({ book }) => {
 				className='block'
 				href={`/books/${book.id}`}
 			>
+				{/*TODO:Migrate to next/image*/}
 				<img
 					alt='Book Cover'
 					className='h-[400px] object-cover aspect-[3/4] w-full transition-all group-hover:scale-105'

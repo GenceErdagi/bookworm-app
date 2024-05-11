@@ -19,7 +19,6 @@ export default class UserService implements IUserService {
 			body: JSON.stringify({ username, password })
 		});
 		if (response.access) {
-			localStorage.setItem('token/', response.access);
 		}
 		return response;
 	}

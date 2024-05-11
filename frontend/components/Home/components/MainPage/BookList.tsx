@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import Rating from '@/components/ui/Rating';
 import StarIcon from '@/components/ui/Rating';
@@ -13,6 +14,7 @@ export default function Component({ books }: { books: Book[] }) {
 			<div className='container grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 xl:gap-24'>
 				<div className='justify-self-center flex flex-col items-start space-y-6'>
 					<div className='w-full h-96 md:h-96 lg:h-128'>
+						{/*TODO:Migrate to next/image*/}
 						<img
 							alt='Book Cover'
 							className='self-center object-contain h-full rounded-lg'
