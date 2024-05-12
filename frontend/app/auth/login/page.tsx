@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import {
 	Card,
@@ -13,6 +12,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
 
 const Page = () => {
 	const router = useRouter();
@@ -22,17 +22,13 @@ const Page = () => {
 
 	const handleLogin = async (event: React.FormEvent) => {
 		event.preventDefault();
-		try {
-			await login(username, password);
-			router.push('/');
-		} catch (error) {
-			console.error('Failed to login:', error);
-		}
+		login(username, password);
+		router.push('/auth/profile');
 	};
 
 	return (
 		<div className='mt-10   h-screen items-center justify-center mb-10 px-4'>
-			<Card className='max-w-2xlmx-auto'>
+			<Card className='max-w-2xl mx-auto'>
 				<CardHeader>
 					<CardTitle>Sign In</CardTitle>
 					<CardDescription>Enter user details to sign in</CardDescription>
@@ -78,39 +74,3 @@ const Page = () => {
 };
 
 export default Page;
-/*		<form onSubmit={handleLogin}>
-			<input
-				type='text'
-				value={username}
-				onChange={(e) => setUsername(e.target.value)}
-				placeholder='Username'
-			/>
-			<input
-				type='password'
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-				placeholder='Password'
-			/>
-			<button type='submit'>Log In</button>
-		</form>
-  <div className='grid grid-cols-2 gap-4'>
-
-<div className='space-y-2'>
-  <Label htmlFor='first-name'>First name</Label>
-  <Input
-    id='first-name'
-    placeholder='John'
-    required
-  />
-</div>
-<div className='space-y-2'>
-  <Label htmlFor='last-name'>Last name</Label>
-  <Input
-    id='last-name'
-    placeholder='Doe'
-    required
-  />
-</div>
-</div>
-    
-    */

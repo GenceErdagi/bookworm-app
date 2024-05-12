@@ -8,7 +8,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Component({ books }: { books: Book[] }) {
-	console.log(books);
 	return (
 		<section className='w-full pt-12 md:pt-24 lg:pt-32'>
 			<div className='container grid gap-10 px-4 md:px-6 lg:grid-cols-2 lg:gap-16 xl:gap-24'>

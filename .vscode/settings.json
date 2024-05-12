@@ -10,8 +10,7 @@
     "**/__pycache__": true,
     "**/.next": true,
     "**/.venv": true,
-    "**/node_modules": true,
-    "backend/media": true
+    "**/node_modules": true
   },
   "hide-files.files": [
     "backend/media"

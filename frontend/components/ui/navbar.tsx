@@ -36,12 +36,21 @@ export default function Navbar() {
 						<div className='flex items-center gap-4'>
 							<Button
 								size='sm'
-								variant='outline'
+								variant='default'
 								onClick={() => {
 									router.push('/auth/profile');
 								}}
 							>
 								Profile
+							</Button>
+							<Button
+								size='sm'
+								variant='destructive'
+								onClick={() => {
+									router.push('/auth/logout');
+								}}
+							>
+								Sign Out
 							</Button>
 						</div>
 					) : (

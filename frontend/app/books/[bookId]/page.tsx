@@ -13,12 +13,11 @@ import Book from '@/types/Book';
 import { MEDIA_URL } from '@/lib/api';
 import ServiceContainer from '@/services/concrete/ServiceContainer';
 import { useParams } from 'next/navigation';
-import { set } from 'react-hook-form';
 import Review from '@/types/Review';
 import Rating from '@/components/ui/Rating';
 import User from '@/types/User';
-import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
 
 interface PageProps {}
 
@@ -26,7 +25,6 @@ const Page: FC<PageProps> = ({}) => {
 	const [loading, setLoading] = useState(true);
 	const [userComment, setUserComment] = useState('');
 	const [userRating, setUserRating] = useState(3);
-	const { user } = useAuth();
 	const router = useRouter();
 	const params = useParams<{ bookId: string }>();
 	const [book, setBook] = useState<Book>();
@@ -35,7 +33,17 @@ const Page: FC<PageProps> = ({}) => {
 	const bookService = ServiceContainer.getInstance().getBookService();
 	const reviewService = ServiceContainer.getInstance().getReviewService();
 	const userService = ServiceContainer.getInstance().getUserService();
-
+	const { user } = useAuth();
+	const handleSubmit = async (e: any) => {
+		e.preventDefault();
+		await reviewService.createReview({
+			book: parseInt(params.bookId),
+			user: user?.id,
+			rating: userRating,
+			comment: userComment
+		});
+		router.refresh();
+	};
 	useEffect(() => {
 		const fetchData = async () => {
 			const book = await bookService.getBookById(parseInt(params.bookId));
@@ -53,6 +61,7 @@ const Page: FC<PageProps> = ({}) => {
 		};
 		fetchData();
 	}, [bookService, reviewService, userService, params.bookId]);
+
 	if (loading) {
 		return (
 			<div className='w-screen h-screen flex justify-center items-center'>
@@ -218,19 +227,7 @@ const Page: FC<PageProps> = ({}) => {
 										}}
 									/>
 								</div>
-								<Button
-									onClick={async (e) => {
-										e.preventDefault();
-										await reviewService.createReview({
-											book: parseInt(params.bookId),
-											user: user.id,
-											rating: userRating,
-											comment: userComment
-										});
-									}}
-								>
-									Submit Review
-								</Button>
+								<Button onClick={handleSubmit}>Submit Review</Button>
 							</form>
 						</div>
 					) : (

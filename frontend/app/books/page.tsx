@@ -5,11 +5,10 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import ServiceContainer from '@/services/concrete/ServiceContainer';
-import BookCard from '@/components/ui/bookCard';
 import Book from '@/types/Book';
 import Genre from '@/types/Genre';
-import { set } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
+import BookCard from '@/components/ui/bookCard';
 
 interface PageProps {}
 
@@ -103,7 +102,7 @@ const Page: FC<PageProps> = ({}) => {
 										book.title.toLowerCase().includes(search.toLowerCase()) ||
 										book.author.toLowerCase().includes(search.toLowerCase())
 								);
-								console.log(searched_books);
+
 								setSearchedBooks(searched_books);
 							}}
 						>

@@ -9,7 +9,7 @@ const Page: FC<PageProps> = ({}) => {
 	return (
 		<div>
 			<h1>Profile</h1>
-			<p>Welcome, {user?.username}</p>
+			<p>Welcome {user?.username}</p>
 		</div>
 	);
 };
