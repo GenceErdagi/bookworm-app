@@ -10,6 +10,15 @@ interface IUserService {
 		refresh?: string;
 		user_id?: number | undefined;
 	}>;
+	register(
+		username: string,
+		password: string,
+		email: string
+	): Promise<{
+		access: string;
+		refresh?: string;
+		user_id?: number | undefined;
+	}>;
 	refreshToken(token: string): Promise<{ access: string; refresh?: string }>;
 	verifyToken(token: string): Promise<any>;
 	fetchUser(userId: number): Promise<User>;

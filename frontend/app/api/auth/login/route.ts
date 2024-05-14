@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { NextRequest } from 'next/server';
 const userService = ServiceContainer.getInstance().getUserService();
 
-export const POST = async (request: NextRequest) => {
+export const POST = async (request: NextRequest): Promise<any> => {
 	const body = await request.json();
 	if (!body.username || !body.password) {
 		return new Response('Username and password are required', { status: 400 });

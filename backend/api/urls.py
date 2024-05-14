@@ -1,6 +1,5 @@
 from django.urls import path, include
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )
@@ -8,7 +7,7 @@ from rest_framework_simplejwt.views import (
 from api.views.books import book_create, book_delete, book_list, book_retrieve, book_update
 from api.views.genres import  genre_create, genre_delete, genre_list, genre_retrieve, genre_update
 from api.views.reviews import review_create, review_delete, review_list, review_retrieve, review_update
-from api.views.userProfiles import user_profile_delete, user_profile_list, user_profile_retrieve, user_profile_update
+from api.views.userProfiles import user_profile_create, user_profile_delete, user_profile_list, user_profile_retrieve, user_profile_update
 from api.views.customTokenObtainPair import CustomTokenObtainPairView
 
 
@@ -34,6 +33,7 @@ urlpatterns = [
     path('reviews/<int:pk>/update/', review_update, name='review-update'),
     path('reviews/<int:pk>/delete/', review_delete, name='review-delete'),
     path('userprofiles/', user_profile_list, name='user-profile-list'),
+    path('userprofiles/create/', user_profile_create, name='user-profile-create'),
     path('userprofiles/<int:pk>/', user_profile_retrieve, name='user-profile-retrieve'),
     path('userprofiles/<int:pk>/update/', user_profile_update, name='user-profile-update'),
     path('userprofiles/<int:pk>/delete/', user_profile_delete, name='user-profile-delete'),

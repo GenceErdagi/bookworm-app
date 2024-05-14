@@ -16,6 +16,11 @@ import { eraseCookie, getCookie } from '@/lib/cookies';
 interface AuthContextType {
 	user: UserProfile | null;
 	login: (username: string, password: string) => Promise<void>;
+	register: (
+		username: string,
+		email: string,
+		password: string
+	) => Promise<void>;
 	logout: () => void;
 }
 interface AuthProviderProps {
@@ -39,14 +44,36 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 			return;
 		}
 		const { user_id } = await response.json();
-		console.log(user_id);
 		const user = await userService.fetchUser(user_id as number);
 		setUser(user);
 		localStorage.setItem('user', JSON.stringify(user));
 	};
+	const register = async (
+		username: string,
+		email: string,
+		password: string
+	) => {
+		const response = await fetch('/api/auth/register', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ username, email, password })
+		});
+		if (!response.ok) {
+			alert('Invalid username or password');
+			return;
+		}
+		const { user_id } = await response.json();
+		const user = await userService.fetchUser(user_id as number);
+		setUser(user);
+		localStorage.setItem('user', JSON.stringify(user));
+	};
+
 	const logout = useCallback(() => {
 		localStorage.removeItem('user');
 		eraseCookie('token');
+		eraseCookie('refresh');
 		setUser(null);
 	}, []);
 
@@ -66,7 +93,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 	}, [logout]);
 
 	return (
-		<AuthContext.Provider value={{ user, login, logout }}>
+		<AuthContext.Provider value={{ user, login, logout, register }}>
 			{children}
 		</AuthContext.Provider>
 	);

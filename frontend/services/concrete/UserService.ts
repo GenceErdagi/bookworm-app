@@ -18,9 +18,32 @@ export default class UserService implements IUserService {
 			method: 'POST',
 			body: JSON.stringify({ username, password })
 		});
-		if (response.access) {
-		}
+
 		return response;
+	}
+	async register(
+		username: string,
+		password: string,
+		email: string
+	): Promise<{
+		access: string;
+		refresh?: string;
+		user_id?: number | undefined;
+	}> {
+		const response = await fetchAPI(`userprofiles/create/`, {
+			method: 'POST',
+			body: JSON.stringify({ username, password, email })
+		});
+		if (!response) {
+			throw new Error('Error during creation');
+		}
+		const response_token = await fetchAPI('token', {
+			method: 'POST',
+			body: JSON.stringify({ username, password })
+		});
+		console.log(response_token);
+
+		return response_token;
 	}
 
 	async refreshToken(

@@ -64,7 +64,14 @@ export default function Navbar() {
 							>
 								Sign in
 							</Button>
-							<Button size='sm'>Sign up</Button>
+							<Button
+								size='sm'
+								onClick={() => {
+									router.push('/auth/register');
+								}}
+							>
+								Sign up
+							</Button>
 						</div>
 					)}
 				</div>

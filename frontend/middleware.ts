@@ -1,28 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { AUTH_ROUTES, verifyJwtToken, isAuthRoute } from '@/lib/auth';
+import { verifyJwtToken, isAuthRoute } from '@/lib/auth';
 
 export const middleware = async (request: NextRequest) => {
 	const { url, nextUrl, cookies } = request;
 	const { value: token } = cookies.get('token') ?? { value: null };
-	const isAuthRouteRequested = isAuthRoute(nextUrl.pathname);
+
 	const hasVerifiedToken = token && (await verifyJwtToken(token));
-	console.log('middleware', { token, isAuthRouteRequested, hasVerifiedToken });
-	if (isAuthRouteRequested) {
+	const isAuthPageRequested = isAuthRoute(nextUrl.pathname);
+
+	if (isAuthPageRequested) {
 		if (!hasVerifiedToken) {
 			const response = NextResponse.next();
+			response.cookies.delete('token');
 			return response;
 		}
-		return NextResponse.redirect(new URL('/', url));
-	}
-	if (!hasVerifiedToken) {
-		const searchParams = new URLSearchParams({ next: nextUrl.pathname });
 
-		return NextResponse.redirect(new URL(`/auth/login/${searchParams}`, url));
+		const response = NextResponse.redirect(new URL(`/`, url));
+		return response;
+	}
+
+	if (!hasVerifiedToken) {
+		const searchParams = new URLSearchParams(nextUrl.searchParams);
+		searchParams.set('next', nextUrl.pathname);
+
+		const response = NextResponse.redirect(
+			new URL(`/login?${searchParams}`, url)
+		);
+		response.cookies.delete('token');
+
+		return response;
 	}
 
 	return NextResponse.next();
 };
 
 export const config = {
-	matcher: ['/auth/login', '/auth/register', '/auth/profile']
+	matcher: ['/auth/login', '/auth/profile']
 };
