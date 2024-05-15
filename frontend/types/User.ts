@@ -9,5 +9,5 @@ export default interface User {
 	is_superuser: boolean;
 	first_name?: string;
 	last_name?: string;
-	wishlist: Book[];
+	wishlist: number[];
 }

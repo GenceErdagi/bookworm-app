@@ -18,18 +18,13 @@ export const middleware = async (request: NextRequest) => {
 		const response = NextResponse.redirect(new URL(`/`, url));
 		return response;
 	}
-
-	if (!hasVerifiedToken) {
-		const searchParams = new URLSearchParams(nextUrl.searchParams);
-		searchParams.set('next', nextUrl.pathname);
-
-		const response = NextResponse.redirect(
-			new URL(`/login?${searchParams}`, url)
-		);
+	//TODO: Rework required
+	/*if (!hasVerifiedToken) {
+		const response = NextResponse.redirect(new URL(`/login`, url));
 		response.cookies.delete('token');
 
 		return response;
-	}
+	}*/
 
 	return NextResponse.next();
 };

@@ -21,7 +21,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     #wishlist = BookSerializer(many=True)
     class Meta:
         model = UserProfile
-        fields = ['id', 'username', 'email']
+        fields = "__all__"
 
 
 class ReviewSerializer(serializers.ModelSerializer):

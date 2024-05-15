@@ -22,7 +22,8 @@ const Page = () => {
 
 	const handleLogin = async (event: React.FormEvent) => {
 		event.preventDefault();
-		login(username, password);
+		await login(username, password);
+		alert('Logged in');
 		router.push('/auth/profile');
 	};
 

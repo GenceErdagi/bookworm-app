@@ -11,7 +11,8 @@ import {
 import UserProfile from '@/types/User';
 import ServiceContainer from '@/services/concrete/ServiceContainer';
 import { verifyJwtToken } from '@/lib/auth';
-import { eraseCookie, getCookie } from '@/lib/cookies';
+import { eraseCookie } from '@/lib/cookies';
+import { useRouter } from 'next/navigation';
 
 interface AuthContextType {
 	user: UserProfile | null;
