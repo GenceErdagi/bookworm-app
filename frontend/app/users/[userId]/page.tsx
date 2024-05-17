@@ -80,10 +80,12 @@ const Page: FC<PageProps> = ({ params }) => {
 							</Avatar>
 							<div>
 								<h1 className='text-2xl font-bold'>{user?.username}</h1>
+								<h1 className='text-lg font-bold'>{user?.email}</h1>
 							</div>
 						</div>
 					</div>
 					<div className='border-t border-gray-200 dark:border-gray-700'>
+						<h1 className='text-xl font-bold mx-12 mt-8'>Wishlist</h1>
 						<div className='p-6 md:p-8'>
 							<div className='md:p-12'>
 								<Carousel className='w-full p-4 mb-4'>

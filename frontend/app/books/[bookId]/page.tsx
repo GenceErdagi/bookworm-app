@@ -18,6 +18,7 @@ import Rating from '@/components/ui/Rating';
 import User from '@/types/User';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
+import { set } from 'react-hook-form';
 
 interface PageProps {}
 
@@ -36,12 +37,18 @@ const Page: FC<PageProps> = ({}) => {
 	const { user } = useAuth();
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
+
 		await reviewService.createReview({
 			book: parseInt(params.bookId),
 			user: user?.id,
 			rating: userRating,
 			comment: userComment
 		});
+		const reviews = await reviewService.getReviewsByBook(
+			parseInt(params.bookId)
+		);
+		setReviews(reviews);
+		setUserComment('');
 		router.refresh();
 	};
 	useEffect(() => {
@@ -114,6 +121,20 @@ const Page: FC<PageProps> = ({}) => {
 								))}
 							</div>
 						</div>
+						{user ? (
+							<div className='grid gap-2'>
+								<div className='flex flex-wrap gap-2'>
+									<Button
+										variant={'destructive'}
+										onClick={() => {
+											//TODO: Add to wishlist
+										}}
+									>
+										Add to Wishlist
+									</Button>
+								</div>
+							</div>
+						) : null}
 					</div>
 				</div>
 				<div className='mx-auto px-4 md:px-6 max-w-2xl grid gap-12'>

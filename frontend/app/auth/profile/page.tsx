@@ -13,27 +13,25 @@ import { FC, useEffect, useState } from 'react';
 import Rating from '@/components/ui/Rating';
 import BookCard from '@/components/ui/bookCard';
 import Book from '@/types/Book';
-import User from '@/types/User';
 import Review from '@/types/Review';
 import ServiceContainer from '@/services/concrete/ServiceContainer';
-import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
 interface PageProps {}
 const Page: FC<PageProps> = ({}) => {
-	const { user: currentUser } = useAuth();
-	const user = currentUser as User;
+	const { user } = useAuth();
+
 	const [loading, setLoading] = useState(true);
 	const [reviews, setReviews] = useState<Review[]>();
 
 	const [reviewedBooks, setReviewedBooks] = useState<Book[]>();
 	const [wishlistBooks, setWishlistBooks] = useState<Book[]>();
-	console;
 	const bookService = ServiceContainer.getInstance().getBookService();
 	const reviewService = ServiceContainer.getInstance().getReviewService();
 
 	useEffect(() => {
 		const fetchData = async () => {
+			if (user === null) return;
 			const reviews = await reviewService.getReviewsByUser(user.id);
 			const books = await bookService.getBooks();
 
@@ -45,15 +43,13 @@ const Page: FC<PageProps> = ({}) => {
 			const wishlistBooks = books.filter((book) =>
 				user.wishlist.includes(book.id)
 			);
-			console.log(wishlistBooks);
-
 			setReviews(reviews);
 			setReviewedBooks(reviewedBooks as Book[]);
 			setWishlistBooks(wishlistBooks);
 			setLoading(false);
 		};
 		fetchData();
-	}, [bookService, reviewService, user.id, user.wishlist]);
+	}, [bookService, reviewService, user]);
 	if (loading) {
 		return (
 			<div className='w-screen h-screen items-center justify-center'>
@@ -81,14 +77,15 @@ const Page: FC<PageProps> = ({}) => {
 						</div>
 					</div>
 					<div className='border-t border-gray-200 dark:border-gray-700'>
+						<h1 className='text-xl font-bold mx-12 mt-8'>Wishlist</h1>
 						<div className='p-6 md:p-8'>
 							<div className='md:p-12'>
 								<Carousel className='w-full p-4 mb-4'>
 									<CarouselContent>
-										{wishlistBooks?.map((book) => (
+										{wishlistBooks?.map((book, i) => (
 											<CarouselItem
 												className='md:basis-1/2 lg:basis-1/3'
-												key={book.id}
+												key={i}
 											>
 												<BookCard book={book} />
 											</CarouselItem>
@@ -101,10 +98,10 @@ const Page: FC<PageProps> = ({}) => {
 							<div>
 								<h2 className='text-xl font-bold mb-4'>Reviews</h2>
 								<div className='space-y-4 mb-4'>
-									{reviewedBooks?.map((book) => (
+									{reviewedBooks?.map((book, i) => (
 										<Link
 											href={`/books/${book.id}`}
-											key={book.id}
+											key={i}
 											className='flex space-x-4'
 										>
 											<img
