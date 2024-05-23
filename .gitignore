@@ -164,5 +164,5 @@ docker-compose.override.yml
 **/.env.production.local
 
 
-**/settings.json
-**/.DS_Store
+**/.vscode
+*/.DS_Store

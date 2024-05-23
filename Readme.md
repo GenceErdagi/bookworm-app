@@ -16,6 +16,7 @@ Bookworm App is a full-stack application designed for book enthusiasts to explor
 - [x] Docker support for easy deployment
 - [] Zod integration for validating forms
 - [] A CMS for editors different from Django Admin system
+- [] Better error handling for pages
 
 ## Installation
 
