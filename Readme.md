@@ -28,9 +28,12 @@ Bookworm App is a full-stack application designed for book enthusiasts to explor
 ### Backend Setup
 
 1. Navigate to the backend directory:
+
    ```sh
    cd backend
+
    ```
+
 2. Build the Docker container:
 
 ```sh
